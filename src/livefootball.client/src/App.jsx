@@ -2,48 +2,15 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import { HubConnectionBuilder } from "@microsoft/signalr";
-
-const LiveScore = ({matchData}) => {
-    return <div>
-        {matchData.events.map(((event, index) => {
-            return (<div key={index} className="event">
-                <span className="team-name">{event.player?.name}</span>
-                <span className="event-type">{event.type?.name}</span>
-                <span className="event-time">{`${event.minute}:${event.second}`}</span>
-            </div>)
-        }))}
-    </div>
-}
-
-const Result = ({ data }) => {
-    if (!data) return;
-    let keys = Object.keys(data);
-
-    if (keys.length < 2) return;
+import Result  from './components/Result.jsx';
+import LiveScore from './components/LiveScore.jsx';
+import Lineup from './components/Lineup.jsx';
 
 
-    let home = keys[0];
-    let away = keys[1];
-    return <div>
 
-        <div>
-            <div>
-                <span>{home} vs {away}</span>
-            </div>
-
-            <div>
-                <span>{data[home]?.goals ?? 0}</span>-
-                <span>{data[away]?.goals ?? 0}</span>
-            </div>
-        </div>
-
-        
-    </div>
-}
 
 function App() {
-    
-
+   
     useEffect(() => {
         populateWeatherData();
         
@@ -51,23 +18,11 @@ function App() {
 
 
     const [matchData, setMatchData] = useState({
-        events: [] // Initialize matchData as an object with an 'events' array
+        events: [] 
     });
 
     const [score, setScore] = useState({});
     
-    // Adjusted check to matchData.events.length to handle the initial empty state
-    //const contents = matchData.events.length === 0
-    //    ? <p><em>Loading... Please refresh once the ASP.NET backend has started. See <a href="https://aka.ms/jspsintegrationreact">https://aka.ms/jspsintegrationreact</a> for more details.</em></p>
-    //    : <div className="events-container">
-    //        {matchData.events.map((event, index) => {
-    //            return (<div key={index} className="event">
-    //                <span className="team-name">{event.player?.name}</span>
-    //                <span className="event-type">{event.type?.name}</span>
-    //                <span className="event-time">{`${event.minute}:${event.second}`}</span>
-    //            </div>)
-    //        })}
-    //    </div>;
 
     return (
         <div>
@@ -75,13 +30,15 @@ function App() {
             <p>This component demonstrates fetching and streaming data from the server.</p>
             
             <div className="main">
-                <div>Left</div>
+                <div>
+                    <Lineup/>
+                </div>
                 <div className="main-middle">
-                <Result data={score} />
+                    <Result data={score} />
                     <LiveScore matchData={matchData} />
                 </div>
                 <div>
-
+                    <Lineup/>
                 </div>
 
             </div>
@@ -89,11 +46,14 @@ function App() {
     );
 
     async function populateWeatherData() {
-        const matchResponse = await fetch(`api/match/3890561/lineup`, {
+        const matchId = 3890561;
+        const matchResponse = await fetch(`api/match/${matchId}/lineup`, {
             headers: {
                 "Content-Type": "application/json",
             }
         })
+
+        const matchOverviwew = await fetch(`api/match/${matchId}`)
 
         const matchData = await matchResponse.json();
 
