@@ -17,3 +17,44 @@ th, td {
     padding-left: 1rem;
     padding-right: 1rem;
 }
+
+.events-container {
+    margin-top: 20px;
+
+}
+
+.event {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    margin-bottom: 5px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+}
+
+.team-name {
+    font-weight: bold;
+    margin-right: 15px;
+    color: #004d99;
+}
+
+.event-type {
+    margin-right: 15px;
+    color: #007300;
+}
+
+.event-time {
+    font-style: italic;
+    color: #333;
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.main .main-middle {
+    flex: 1 1 auto;
+}
