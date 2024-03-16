@@ -31,6 +31,7 @@ th, td {
     margin-bottom: 5px;
     background-color: #f0f0f0;
     border-radius: 5px;
+    width: 400px;
 }
 
 .team-name {
@@ -57,4 +58,35 @@ th, td {
 
 .main .main-middle {
     flex: 1 1 auto;
+}
+
+
+.player-subbed > div {
+    background-color:orangered;
+}
+
+.player-position{
+    font-size: x-small;
+}
+
+.player-with-yellow {
+    background-color: yellow;
+}
+
+.player-plate {
+    width: 300px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    margin: 10px;
+    border-radius: 5px;
+    text-align: center;
+   
+}
+
+.player-sub {
+    background-color: #f0f0f0;
+}
+
+.player-with-yellow {
+    border-color: #ffdd57;
 }

@@ -12,6 +12,7 @@ namespace LiveFootball.Server.Hubs
         public async IAsyncEnumerable<PlayEvent> StreamMatchEvents(
         int matchId,
         int eventInterval,
+        string[] eventsOfInterest,
         [EnumeratorCancellation]
         CancellationToken cancellationToken)
         {
@@ -20,9 +21,10 @@ namespace LiveFootball.Server.Hubs
                 throw new InvalidCastException("Invalid play interval (this will be replaced by play speed in the future)");
             }
 
-            var events = matchService.GetMatchEvents(matchId);
+            eventsOfInterest ??= [];
+            var events = matchService.GetMatchEvents(matchId).Where(e => eventsOfInterest.Contains(e.Type?.Name));
 
-            foreach(var evnt in events)
+            foreach (var evnt in events)
             {
                 // Check the cancellation token regularly so that the server will stop
                 // producing items if the client disconnects.

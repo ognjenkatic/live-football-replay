@@ -2,6 +2,7 @@ using LiveFootball.Application;
 using LiveFootball.Application.Competitions;
 using LiveFootball.Application.Matches;
 using LiveFootball.Server.Hubs;
+using LiveFootball.Server.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,6 +20,10 @@ builder.Services.AddScoped<CompetitionService>();
 builder.Services.AddScoped<MatchService>();
 builder.Services.AddSingleton<IndexerService>();
 builder.Services.AddSignalR();
+builder.Services.AddHttpClient<SportsDbClient>(ctx =>
+{
+    ctx.BaseAddress = new Uri("https://www.thesportsdb.com");
+});
 
 var app = builder.Build();
 

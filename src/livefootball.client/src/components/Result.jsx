@@ -16,9 +16,7 @@ const Result = ({ data }) => {
     return <div>
 
         <div>
-            <div>
-                <span>{home} vs {away}</span>
-            </div>
+           
 
             <div>
                 <span>{data[home]?.goals ?? 0}</span>-
