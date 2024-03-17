@@ -137,7 +137,7 @@ function App() {
         var connection = new HubConnectionBuilder().withUrl("https://localhost:7027/MatchHub").build();
         console.log("Subscribing");
         connection.start().then(function () {
-            connection.stream("StreamMatchEvents", 3890561, 4,
+            connection.stream("StreamMatchEvents", 3890561,100,
                 [
                     "Substitution",
                     "Starting XI",

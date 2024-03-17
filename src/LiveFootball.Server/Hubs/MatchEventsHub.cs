@@ -32,9 +32,8 @@ namespace LiveFootball.Server.Hubs
                 yield return events[i];
 
                 if (i < events.Length - 1) 
-                { 
-                    var waitInterval = new TimeSpan((events[i+1].Timestamp.Ticks - events[i].Timestamp.Ticks)/speed);
-                    await Task.Delay(waitInterval, cancellationToken);
+                {
+                    await Task.Delay(TimeSpan.FromTicks(Math.Max(1, events[i + 1].Timestamp.Ticks - events[i].Timestamp.Ticks)/speed), cancellationToken);
                 }
             }
         }
