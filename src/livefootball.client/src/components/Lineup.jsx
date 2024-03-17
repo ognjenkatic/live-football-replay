@@ -31,7 +31,7 @@ const Lineup = ({ data }) => {
         };
 
         fetchPlayerInfo();
-    }, [data.currentLineup, data.completeLineup]); // This effect depends on `data`, it will re-run when `data` changes.
+    }, [data.currentLineup, data.completeLineup, data.isHomeTeam]); // This effect depends on `data`, it will re-run when `data` changes.
 
     const activePlayers = players.filter(e => !e.currentData.isSubbed);
     const subs = players.filter(e => e.currentData.isSubbed);

@@ -16,11 +16,9 @@ const Result = ({ data }) => {
     return <div>
 
         <div>
-           
-
-            <div>
-                <span>{data[home]?.goals ?? 0}</span>-
-                <span>{data[away]?.goals ?? 0}</span>
+            <div className="result-display">
+                <span className="home-team-display">{home} {data[home]?.goals ?? 0}</span>-
+                <span className="away-team-display" >{data[away]?.goals ?? 0} {away}</span>
             </div>
         </div>
 

@@ -55,10 +55,11 @@ button:focus-visible {
 }
 
 @media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
+    :root {
+        color: #213547;
+        /*background-color: #ffffff;*/
+        background: linear-gradient(90deg, #86a6d8, #6f98d8);
+    }
   a:hover {
     color: #747bff;
   }

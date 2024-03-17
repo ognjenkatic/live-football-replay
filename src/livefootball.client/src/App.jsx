@@ -1,11 +1,10 @@
 /* eslint-disable react/prop-types */
+import { HubConnectionBuilder } from "@microsoft/signalr";
 import { useEffect, useState } from 'react';
 import './App.css';
-import { HubConnectionBuilder } from "@microsoft/signalr";
-import Result  from './components/Result.jsx';
-import LiveScore from './components/LiveScore.jsx';
 import Lineup from './components/Lineup.jsx';
-import Overview from './components/Overview.jsx';
+import LiveScore from './components/LiveScore.jsx';
+import Result from './components/Result.jsx';
 
 function App() {
 
@@ -19,27 +18,25 @@ function App() {
         events: []
     });
     const [score, setScore] = useState({});
-    const [overview, SetOverview] = useState({});
     const [lineup, SetLineup] = useState([{}, {}]);
     
 
     return (
-        <div>
-            <Overview data={overview} />
-            
+        <div className="gradient-background">
+
+            <Result data={score} />
             <div className="main">
                 <div>
                     <Lineup data={lineup[0]} />
                 </div>
                 <div className="main-middle">
-                    <Result data={score} />
                     <LiveScore matchData={matchData} />
                 </div>
                 <div>
                     <Lineup data={lineup[1]} />
                 </div>
 
-            </div>6
+            </div>
         </div>
     );
 
@@ -116,8 +113,6 @@ function App() {
 
         console.log(matchData);
 
-        SetOverview(matchOverview);
-
         const lineupData = [
             {
                 isHomeTeam: true,
@@ -142,9 +137,20 @@ function App() {
         var connection = new HubConnectionBuilder().withUrl("https://localhost:7027/MatchHub").build();
         console.log("Subscribing");
         connection.start().then(function () {
-            connection.stream("StreamMatchEvents", 3890561, 250, ["Substitution", "Starting XI", "Shot", "Foul Committed"])
+            connection.stream("StreamMatchEvents", 3890561, 4,
+                [
+                    "Substitution",
+                    "Starting XI",
+                    "Shot",
+                    "Foul Committed",
+                    "Offside",
+                    "Bad Behavior",
+                    "Pass",
+                    "Ball Recovery",
+                    "Interception"])
                 .subscribe({
                     next: (item) => {
+                        item.isHomeTeam = item.team?.name == homeTeamName;
                         switch (item?.type?.name) {
                             case "Foul Committed": {
                                 if (item.foul_committed == null)
@@ -154,7 +160,7 @@ function App() {
                                 if (item.foul_committed.card != null) {
                                     SetLineup(lineup => {
                                         performCarding(lineup.find(t => t.teamName == item.team.name), item.player, item.foul_committed.card);
-                                        return lineup
+                                        return structuredClone(lineup)
                                     });
                                 }
                                 break;
@@ -163,14 +169,14 @@ function App() {
                                 let teamName = item.team.name;
                                 SetLineup(lineup => {
                                     performSubstitution(lineup.find(t => t.teamName == teamName), item);
-                                    return lineup;
+                                    return structuredClone(lineup);
                                 });
                                 break;
                             }
                             case "Starting XI": {
                                 SetLineup(lineup => {
                                     lineup.find(t => t.teamName == item.team.name).currentLineup = item.tactics.lineup
-                                    return lineup;
+                                    return structuredClone(lineup);
                                     }
                                 );
                                 
@@ -198,20 +204,18 @@ function App() {
                                     });
                                     return;
                                 }
-
-                                setMatchData(prevMatchData => ({
-                                    ...prevMatchData, 
-                                    events: [item, ...prevMatchData.events.slice(0, 14)]
-                                }));
+                                
                                 break;
                                 
                             default:
-                                setMatchData(prevMatchData => ({
-                                    ...prevMatchData,
-                                    events: [item, ...prevMatchData.events.slice(0, 14)]
-                                }));
                                 break;
                         }
+
+
+                        setMatchData(prevMatchData => ({
+                            ...prevMatchData,
+                            events: [item, ...prevMatchData.events.slice(0, 14)]
+                        }));
                         
                     },
                     complete: () => {

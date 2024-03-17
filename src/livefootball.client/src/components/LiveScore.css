@@ -1,0 +1,39 @@
+.event {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+    .event.home {
+        flex-direction: row;
+        text-align:left;
+    }
+
+    .event.away {
+        flex-direction: row-reverse;
+        text-align:right;
+    }
+
+.player-and-type {
+    display: flex;
+    flex-direction: column;
+}
+
+.team-name,
+.event-type {
+    display: block; /* Ensure they stack vertically */
+
+}
+
+/* Additional styling for alignment and spacing */
+.event-time {
+    padding: 0 10px; /* Adjust as needed for spacing */
+}
+
+.event-outcome{
+    color: brown;
+}
+
+.event-typename{
+    color: purple;
+}

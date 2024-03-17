@@ -7,8 +7,8 @@ namespace LiveFootball.Server.Services
     public class SportsDbClient(HttpClient client)
     {
         private readonly HttpClient client = client;
-        private IDictionary<string, Player?> playerCache = new Dictionary<string, Player?>();
-        private IDictionary<string, Team?> teamCache = new Dictionary<string, Team?>();
+        private static IDictionary<string, Player?> playerCache = new Dictionary<string, Player?>();
+        private static IDictionary<string, Team?> teamCache = new Dictionary<string, Team?>();
 
         public async Task<Player?> FindPlayer(string name)
         {

@@ -35,9 +35,7 @@ th, td {
 }
 
 .team-name {
-    font-weight: bold;
     margin-right: 15px;
-    color: #004d99;
 }
 
 .event-type {
@@ -62,7 +60,7 @@ th, td {
 
 
 .player-subbed > div {
-    background-color:orangered;
+    background-color: #64a6e6
 }
 
 .player-position{
@@ -80,13 +78,29 @@ th, td {
     margin: 10px;
     border-radius: 5px;
     text-align: center;
-   
+    background: white;  
 }
 
 .player-sub {
-    background-color: #f0f0f0;
+    background-color: #e69b75;
 }
 
 .player-with-yellow {
-    border-color: #ffdd57;
+    border-color: #e9d37e;
+}
+
+.home-team-display {
+    color: #f21515;
+    font-weight: bold;
+}
+
+.away-team-display {
+    color: blue;
+    font-weight: bold;
+}
+
+.result-display{
+    font-size: 50px;
+    font-family:'Rockwell Nova';
+    padding:2px;
 }
