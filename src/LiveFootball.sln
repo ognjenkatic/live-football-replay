@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34616.47
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiveFootball.Server", "LiveFootball.Server\LiveFootball.Server.csproj", "{9C7637BA-EB1C-4BA0-B071-17DE8BA02C57}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LiveFootball.Server", "LiveFootball.Server\LiveFootball.Server.csproj", "{9C7637BA-EB1C-4BA0-B071-17DE8BA02C57}"
 EndProject
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "livefootball.client", "livefootball.client\livefootball.client.esproj", "{A91E91B9-5C0D-49B8-9791-6602596E16E5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiveFootball.Application", "..\LiveFootball.Application\LiveFootball.Application.csproj", "{6C775FC5-D6F8-4320-B042-29C119AB2DA2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LiveFootball.Application", "..\LiveFootball.Application\LiveFootball.Application.csproj", "{6C775FC5-D6F8-4320-B042-29C119AB2DA2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SbOdSharp", "..\..\statsbomb-opendata-models\src\SbOdSharp\SbOdSharp.csproj", "{CCEB9FE9-1AFD-4FBF-BC78-4160B02BDD91}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SbOdSharp", "SbOdSharp\SbOdSharp.csproj", "{5EA406E4-0269-4C85-903A-D92CC45605EA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,10 +31,10 @@ Global
 		{6C775FC5-D6F8-4320-B042-29C119AB2DA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6C775FC5-D6F8-4320-B042-29C119AB2DA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6C775FC5-D6F8-4320-B042-29C119AB2DA2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CCEB9FE9-1AFD-4FBF-BC78-4160B02BDD91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CCEB9FE9-1AFD-4FBF-BC78-4160B02BDD91}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CCEB9FE9-1AFD-4FBF-BC78-4160B02BDD91}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CCEB9FE9-1AFD-4FBF-BC78-4160B02BDD91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EA406E4-0269-4C85-903A-D92CC45605EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EA406E4-0269-4C85-903A-D92CC45605EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EA406E4-0269-4C85-903A-D92CC45605EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EA406E4-0269-4C85-903A-D92CC45605EA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

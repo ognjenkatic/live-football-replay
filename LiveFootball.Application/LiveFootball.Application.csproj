@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\statsbomb-opendata-models\src\SbOdSharp\SbOdSharp.csproj" />
+    <ProjectReference Include="..\src\SbOdSharp\SbOdSharp.csproj" />
   </ItemGroup>
 
 </Project>
