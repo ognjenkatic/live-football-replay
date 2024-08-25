@@ -1,14 +1,15 @@
-﻿using LiveFootball.Server.DTOs;
+using LiveFootball.Server.DTOs;
 using System.Text.Json;
 using System.Web;
+using System.Collections.Generic;
 
 namespace LiveFootball.Server.Services
 {
     public class SportsDbClient(HttpClient client)
     {
         private readonly HttpClient client = client;
-        private static IDictionary<string, Player?> playerCache = new Dictionary<string, Player?>();
-        private static IDictionary<string, Team?> teamCache = new Dictionary<string, Team?>();
+        private static Dictionary<string, Player?> playerCache = new Dictionary<string, Player?>();
+        private static Dictionary<string, Team?> teamCache = new Dictionary<string, Team?>();
 
         public async Task<Player?> FindPlayer(string name)
         {

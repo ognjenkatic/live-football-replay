@@ -1,124 +1,124 @@
-﻿using System.Text.Json.Serialization;
+using System.Text.Json.Serialization;
 
 namespace LiveFootball.Server.DTOs
 {
     public class Player
     {
         [JsonPropertyName("idPlayer")]
-        public string IdPlayer { get; set; }
+        public required string IdPlayer { get; set; }
 
         [JsonPropertyName("idTeam")]
-        public string IdTeam { get; set; }
+        public required string IdTeam { get; set; }
 
         [JsonPropertyName("idTeam2")]
-        public string IdTeam2 { get; set; }
+        public required string IdTeam2 { get; set; }
 
         [JsonPropertyName("idSoccerXML")]
-        public string IdSoccerXML { get; set; }
+        public required string IdSoccerXML { get; set; }
 
         [JsonPropertyName("idAPIfootball")]
-        public string IdAPIfootball { get; set; }
+        public required string IdAPIfootball { get; set; }
 
         [JsonPropertyName("strNationality")]
-        public string StrNationality { get; set; }
+        public required string StrNationality { get; set; }
 
         [JsonPropertyName("strPlayer")]
-        public string StrPlayer { get; set; }
+        public required string StrPlayer { get; set; }
 
         [JsonPropertyName("strPlayerAlternate")]
-        public string StrPlayerAlternate { get; set; }
+        public required string StrPlayerAlternate { get; set; }
 
         [JsonPropertyName("strTeam")]
-        public string StrTeam { get; set; }
+        public required string StrTeam { get; set; }
 
         [JsonPropertyName("strTeam2")]
-        public string StrTeam2 { get; set; }
+        public required string StrTeam2 { get; set; }
 
         [JsonPropertyName("strSport")]
-        public string StrSport { get; set; }
+        public required string StrSport { get; set; }
 
         [JsonPropertyName("intSoccerXMLTeamID")]
-        public string IntSoccerXMLTeamID { get; set; }
+        public required string IntSoccerXMLTeamID { get; set; }
 
         [JsonPropertyName("dateBorn")]
-        public string DateBorn { get; set; }
+        public required string DateBorn { get; set; }
 
         [JsonPropertyName("strNumber")]
-        public string StrNumber { get; set; }
+        public required string StrNumber { get; set; }
 
         [JsonPropertyName("dateSigned")]
-        public string DateSigned { get; set; }
+        public required string DateSigned { get; set; }
 
         [JsonPropertyName("strSigning")]
-        public string StrSigning { get; set; }
+        public required string StrSigning { get; set; }
 
         [JsonPropertyName("strWage")]
-        public string StrWage { get; set; }
+        public required string StrWage { get; set; }
 
         [JsonPropertyName("strOutfitter")]
-        public string StrOutfitter { get; set; }
+        public required string StrOutfitter { get; set; }
 
         [JsonPropertyName("strKit")]
-        public string StrKit { get; set; }
+        public required string StrKit { get; set; }
 
         [JsonPropertyName("strAgent")]
-        public string StrAgent { get; set; }
+        public required string StrAgent { get; set; }
 
         [JsonPropertyName("strBirthLocation")]
-        public string StrBirthLocation { get; set; }
+        public required string StrBirthLocation { get; set; }
 
         [JsonPropertyName("strGender")]
-        public string StrGender { get; set; }
+        public required string StrGender { get; set; }
 
         [JsonPropertyName("strSide")]
-        public string StrSide { get; set; }
+        public required string StrSide { get; set; }
 
         [JsonPropertyName("strPosition")]
-        public string StrPosition { get; set; }
+        public required string StrPosition { get; set; }
 
         [JsonPropertyName("strFacebook")]
-        public string StrFacebook { get; set; }
+        public required string StrFacebook { get; set; }
 
         [JsonPropertyName("strWebsite")]
-        public string StrWebsite { get; set; }
+        public required string StrWebsite { get; set; }
 
         [JsonPropertyName("strTwitter")]
-        public string StrTwitter { get; set; }
+        public required string StrTwitter { get; set; }
 
         [JsonPropertyName("strInstagram")]
-        public string StrInstagram { get; set; }
+        public required string StrInstagram { get; set; }
 
         [JsonPropertyName("strYoutube")]
-        public string StrYoutube { get; set; }
+        public required string StrYoutube { get; set; }
 
         [JsonPropertyName("strHeight")]
-        public string StrHeight { get; set; }
+        public required string StrHeight { get; set; }
 
         [JsonPropertyName("strWeight")]
-        public string StrWeight { get; set; }
+        public required string StrWeight { get; set; }
 
         [JsonPropertyName("intLoved")]
-        public string IntLoved { get; set; }
+        public required string IntLoved { get; set; }
 
         [JsonPropertyName("strThumb")]
-        public string StrThumb { get; set; }
+        public required string StrThumb { get; set; }
 
         [JsonPropertyName("strCutout")]
-        public string StrCutout { get; set; }
+        public required string StrCutout { get; set; }
 
         [JsonPropertyName("strRender")]
-        public string StrRender { get; set; }
+        public required string StrRender { get; set; }
 
         [JsonPropertyName("strCreativeCommons")]
-        public string StrCreativeCommons { get; set; }
+        public required string StrCreativeCommons { get; set; }
 
         [JsonPropertyName("strLocked")]
-        public string StrLocked { get; set; }
+        public required string StrLocked { get; set; }
     }
 
     public class SportsDbFindPlayerResponse
     {
         [JsonPropertyName("player")]
-        public List<Player> Players { get; set; }
+        public required List<Player> Players { get; set; }
     }
 }

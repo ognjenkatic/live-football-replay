@@ -1,4 +1,4 @@
-﻿using System.Text.Json.Serialization;
+using System.Text.Json.Serialization;
 
 namespace LiveFootball.Server.DTOs
 {
@@ -11,127 +11,127 @@ namespace LiveFootball.Server.DTOs
     public class Team
     {
         [JsonPropertyName("idTeam")]
-        public string IdTeam { get; set; }
+        public required string IdTeam { get; set; }
 
         [JsonPropertyName("idSoccerXML")]
-        public string IdSoccerXML { get; set; }
+        public required string IdSoccerXML { get; set; }
 
         [JsonPropertyName("idAPIfootball")]
-        public string IdAPIfootball { get; set; }
+        public required string IdAPIfootball { get; set; }
 
         [JsonPropertyName("intLoved")]
-        public string IntLoved { get; set; }
+        public required string IntLoved { get; set; }
 
         [JsonPropertyName("strTeam")]
-        public string StrTeam { get; set; }
+        public required string StrTeam { get; set; }
 
         [JsonPropertyName("strTeamShort")]
-        public string StrTeamShort { get; set; }
+        public required string StrTeamShort { get; set; }
 
         [JsonPropertyName("strAlternate")]
-        public string StrAlternate { get; set; }
+        public required string StrAlternate { get; set; }
 
         [JsonPropertyName("intFormedYear")]
-        public string IntFormedYear { get; set; }
+        public required string IntFormedYear { get; set; }
 
         [JsonPropertyName("strSport")]
-        public string StrSport { get; set; }
+        public required string StrSport { get; set; }
 
         [JsonPropertyName("strLeague")]
-        public string StrLeague { get; set; }
+        public required string StrLeague { get; set; }
 
         [JsonPropertyName("idLeague")]
-        public string IdLeague { get; set; }
+        public required string IdLeague { get; set; }
 
         [JsonPropertyName("strLeague2")]
-        public string StrLeague2 { get; set; }
+        public required string StrLeague2 { get; set; }
 
         [JsonPropertyName("idLeague2")]
-        public string IdLeague2 { get; set; }
+        public required string IdLeague2 { get; set; }
 
         [JsonPropertyName("strLeague3")]
-        public string StrLeague3 { get; set; }
+        public required string StrLeague3 { get; set; }
 
         [JsonPropertyName("idLeague3")]
-        public string IdLeague3 { get; set; }
+        public required string IdLeague3 { get; set; }
 
         [JsonPropertyName("strLeague4")]
-        public string StrLeague4 { get; set; }
+        public required string StrLeague4 { get; set; }
 
         [JsonPropertyName("idLeague4")]
-        public string IdLeague4 { get; set; }
+        public required string IdLeague4 { get; set; }
 
         [JsonPropertyName("strLeague5")]
-        public string StrLeague5 { get; set; }
+        public required string StrLeague5 { get; set; }
 
         [JsonPropertyName("idLeague5")]
-        public string IdLeague5 { get; set; }
+        public required string IdLeague5 { get; set; }
 
         [JsonPropertyName("strLeague6")]
-        public string StrLeague6 { get; set; }
+        public required string StrLeague6 { get; set; }
 
         [JsonPropertyName("strLeague7")]
-        public string StrLeague7 { get; set; }
+        public required string StrLeague7 { get; set; }
 
         [JsonPropertyName("strStadium")]
-        public string StrStadium { get; set; }
+        public required string StrStadium { get; set; }
 
         [JsonPropertyName("strKeywords")]
-        public string StrKeywords { get; set; }
+        public required string StrKeywords { get; set; }
 
         [JsonPropertyName("strRSS")]
-        public string StrRSS { get; set; }
+        public required string StrRSS { get; set; }
 
         [JsonPropertyName("strStadiumThumb")]
-        public string StrStadiumThumb { get; set; }
+        public required string StrStadiumThumb { get; set; }
 
         [JsonPropertyName("strStadiumDescription")]
-        public string StrStadiumDescription { get; set; }
+        public required string StrStadiumDescription { get; set; }
 
         [JsonPropertyName("strStadiumLocation")]
-        public string StrStadiumLocation { get; set; }
+        public required string StrStadiumLocation { get; set; }
 
         [JsonPropertyName("intStadiumCapacity")]
-        public string IntStadiumCapacity { get; set; }
+        public required string IntStadiumCapacity { get; set; }
 
         [JsonPropertyName("strWebsite")]
-        public string StrWebsite { get; set; }
+        public required string StrWebsite { get; set; }
 
         [JsonPropertyName("strFacebook")]
-        public string StrFacebook { get; set; }
+        public required string StrFacebook { get; set; }
 
         [JsonPropertyName("strTwitter")]
-        public string StrTwitter { get; set; }
+        public required string StrTwitter { get; set; }
 
         [JsonPropertyName("strInstagram")]
-        public string StrInstagram { get; set; }
+        public required string StrInstagram { get; set; }
 
         [JsonPropertyName("strDescriptionEN")]
-        public string StrDescriptionEN { get; set; }
+        public required string StrDescriptionEN { get; set; }
 
         [JsonPropertyName("strDescriptionDE")]
-        public string StrDescriptionDE { get; set; }
+        public required string StrDescriptionDE { get; set; }
 
         [JsonPropertyName("strDescriptionFR")]
-        public string StrDescriptionFR { get; set; }
+        public required string StrDescriptionFR { get; set; }
 
         [JsonPropertyName("strDescriptionIT")]
-        public string StrDescriptionIT { get; set; }
+        public required string StrDescriptionIT { get; set; }
 
         [JsonPropertyName("strDescriptionJP")]
-        public string StrDescriptionJP { get; set; }
+        public required string StrDescriptionJP { get; set; }
 
         [JsonPropertyName("strDescriptionRU")]
-        public string StrDescriptionRU { get; set; }
+        public required string StrDescriptionRU { get; set; }
 
         [JsonPropertyName("strDescriptionES")]
-        public string StrDescriptionES { get; set; }
+        public required string StrDescriptionES { get; set; }
 
         [JsonPropertyName("strDescriptionPT")]
-        public string StrDescriptionPT { get; set; }
+        public required string StrDescriptionPT { get; set; }
 
         [JsonPropertyName("strDescriptionNO")]
-        public string StrDescriptionNO { get; set; }
+        public required string StrDescriptionNO { get; set; }
 
         [JsonPropertyName("strKitColour1")]
         public string StrKitColour1 { get; set; }
