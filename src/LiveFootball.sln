@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LiveFootball.Server", "Live
 EndProject
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "livefootball.client", "livefootball.client\livefootball.client.esproj", "{A91E91B9-5C0D-49B8-9791-6602596E16E5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LiveFootball.Application", "..\LiveFootball.Application\LiveFootball.Application.csproj", "{6C775FC5-D6F8-4320-B042-29C119AB2DA2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LiveFootball.Application", "LiveFootball.Application\LiveFootball.Application.csproj", "{6C775FC5-D6F8-4320-B042-29C119AB2DA2}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SbOdSharp", "SbOdSharp\SbOdSharp.csproj", "{5EA406E4-0269-4C85-903A-D92CC45605EA}"
 EndProject

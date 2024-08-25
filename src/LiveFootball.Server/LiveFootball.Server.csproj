@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\LiveFootball.Application\LiveFootball.Application.csproj" />
+    <ProjectReference Include="..\LiveFootball.Application\LiveFootball.Application.csproj" />
     <ProjectReference Include="..\livefootball.client\livefootball.client.esproj">
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
