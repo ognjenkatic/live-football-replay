@@ -1,4 +1,4 @@
-﻿using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using SbOdSharp;
 using System;
@@ -28,10 +28,9 @@ namespace LiveFootball.Application.Matches
                 );
             }
 
-            var matchl = Directory.GetDirectories(matchesPath).SelectMany(f => Directory.GetFiles(f)).ToList();
             var matchFilePaths = Directory.GetDirectories(matchesPath).SelectMany(f => Directory.GetFiles(f)).Where(f => f.EndsWith(".json"));
 
-            if (matchFilePaths?.Any() != true)
+            if (!matchFilePaths.Any())
             {
                 throw new InvalidCastException("Could not find any match json files");
             }
@@ -44,7 +43,7 @@ namespace LiveFootball.Application.Matches
 
                 if (matches is null)
                 {
-                    logger.LogWarning("Could not deserialize matches from {path}", matchFile);
+                    logger.LogWarning("Could not deserialize matches from {Path}", matchFile);
                     continue;
                 }
 
@@ -54,7 +53,7 @@ namespace LiveFootball.Application.Matches
                 }
             }
 
-            logger.LogInformation("Indexing complete, indexed {numberOfIndexedMatches}", _matchLocationDictionary.Count);
+            logger.LogInformation("Indexing complete, indexed {NumberOfIndexedMatches}", _matchLocationDictionary.Count);
         }
 
         public bool TryGetMatchFile(int matchId, out string? path) => _matchLocationDictionary.TryGetValue(matchId, out path);
