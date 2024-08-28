@@ -1,13 +1,11 @@
-﻿using LiveFootball.Application.Matches.Models;
-using Microsoft.Extensions.Logging;
+using LiveFootball.Application.Matches.Models;
 using Microsoft.Extensions.Options;
 using SbOdSharp;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
-using System.Text;
 using System.Text.Json;
-using System.Threading.Tasks;
 
 namespace LiveFootball.Application.Matches
 {
@@ -19,7 +17,6 @@ namespace LiveFootball.Application.Matches
 
         private readonly OpenDataConfig _openDataConfig = openDataConfig.Value;
         private readonly IndexerService indexerService = indexerService;
-        private readonly ILogger<MatchService> logger = logger;
 
         public ICollection<PlayEvent> GetMatchEvents(int matchId)
         {
@@ -32,7 +29,7 @@ namespace LiveFootball.Application.Matches
                 );
             }
 
-            var matchEventsPath = Directory.GetFiles(eventsPath).FirstOrDefault(f => f.EndsWith($"{matchId}.json"));
+            var matchEventsPath = Array.Find(Directory.GetFiles(eventsPath), f => f.EndsWith($"{matchId}.json"));
 
             if (matchEventsPath is null)
             {
@@ -63,7 +60,7 @@ namespace LiveFootball.Application.Matches
                 );
             }
 
-            var matchLineupPath = Directory.GetFiles(lineupsPath).FirstOrDefault(f => f.EndsWith($"{matchId}.json"));
+            var matchLineupPath = Array.Find(Directory.GetFiles(lineupsPath), f => f.EndsWith($"{matchId}.json"));
 
             if (matchLineupPath is null)
             {
@@ -117,8 +114,7 @@ namespace LiveFootball.Application.Matches
                 );
             }
 
-            var files = Directory.GetFiles(matchesPath);
-            var matchespath = Directory.GetFiles(matchesPath).FirstOrDefault(f =>  new FileInfo(f).Name ==  $"{seasonId}.json");
+            var matchespath = Array.Find(Directory.GetFiles(matchesPath), f => new FileInfo(f).Name == $"{seasonId}.json");
 
             if (!File.Exists(matchespath))
             {
